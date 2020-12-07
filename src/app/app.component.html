@@ -1,0 +1,58 @@
+<!-- <div class="back">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav sidebar" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false" >
+      <mat-nav-list color="primary" class="sidenav">
+        <a mat-list-item href="#">Single Player games</a>
+        <a mat-list-item href="#">Quiz</a>
+        <a mat-list-item href="#">Brain teaser</a>
+        <a mat-list-item href="#">Logical thinking</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <mat-icon>eco</mat-icon><span>Bestify Your Time</span>
+      </mat-toolbar>
+      <app-slider></app-slider>-->
+      <!-- <app-box-obstracle></app-box-obstracle> 
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <router-outlet></router-outlet>
+</div> -->
+
+<!-- <app-bodypart></app-bodypart> -->
+
+<app-navbar [deviceXs]="deviceXs"></app-navbar>
+<app-slider></app-slider>
+
+<mat-drawer-container class="slider">
+    <!-- <div *ngIf="deviceXs">
+        <mat-drawer mode="side" #drawer opened>Drawer content</mat-drawer>
+    </div>
+    <div *ngIf="!deviceXs">
+        <mat-drawer mode="side" #drawer  >Drawer content</mat-drawer>
+      </div> -->
+      <mat-drawer mode="side" #drawer opened>Drawer content</mat-drawer>
+    <mat-drawer-content color="primary">
+      <button *ngIf="deviceXs" mat-raised-button (click)="drawer.toggle()">
+          Menu
+      </button>
+      Main content<router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<app-footer></app-footer>
+
+
+
+
